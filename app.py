@@ -31,7 +31,7 @@ def recommend(movie):
 st.title("Movie Scout")
 
 selected_name = option = st.selectbox(
-    "Pick a movie to watch :)", movies['title'].values
+    "First, let's see what you like", movies['title'].values
 )
 
 if st.button('Recommend'):
@@ -54,3 +54,8 @@ if st.button('Recommend'):
         st.text(recommendations[4])
         st.image(posters[4])
 
+st.header("How It Works")
+st.markdown("This recommendation system uses content based filtering based on cosine similiarity (closeness of two "
+            "vectors based on the cos of angle between them). It uses a dataset of over 5000 movies, "
+            "where each movie represents a vector in 5kdim space. The top 5 closest vectors are what you get "
+            "recommended.")
